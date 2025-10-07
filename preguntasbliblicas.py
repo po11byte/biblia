@@ -4,7 +4,7 @@ import random
 import json
 from datetime import datetime
 
-st.set_page_config(page_title="📖 API Bible Quiz", page_icon="✝", layout="wide")
+st.set_page_config(page_title=" API Bible Quiz", page_icon="✝", layout="wide")
 
 st.markdown("""
 <style>
@@ -216,10 +216,9 @@ with st.sidebar:
         st.rerun()
         col_left, col_right = st.columns([3, 1])
 
-with col_left:
-    col_btn1, col_btn2 = st.columns(2)
+with col_left: col_btn1, col_btn2 = st.columns(2)
     
-    with col_btn1:
+with col_btn1:
         if st.button(" Nueva Pregunta desde API", use_container_width=True):
             with st.spinner("Obteniendo pregunta desde la API..."):
                 nueva_pregunta = generar_pregunta_desde_api("versiculo", version_seleccionada)
@@ -232,7 +231,7 @@ with col_left:
                 else:
                     st.error(" Error al obtener pregunta de la API")
     
-    with col_btn2:
+with col_btn2:
         if st.session_state.pregunta_actual and not st.session_state.mostrar_respuesta:
             if st.button(" Mostrar Respuesta", use_container_width=True):
                 st.session_state.mostrar_respuesta = True
@@ -285,7 +284,7 @@ with col_left:
         
                     st.markdown('</div>', unsafe_allow_html=True)
             else:
-                st.info("👆 Haz clic en 'Nueva Pregunta desde API' para comenzar")
+                st.info(" Haz clic en 'Nueva Pregunta desde API' para comenzar")
 
 with col_right:
     st.markdown("###  Puntuación")
@@ -348,7 +347,7 @@ with col_api2:
     st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #666;'>
-    <p>📖 <strong>Bible Quiz con APIs</strong> - Preguntas generadas en tiempo real desde APIs bíblicas</p>
+    <p> <strong>Bible Quiz con APIs</strong> - Preguntas generadas en tiempo real desde APIs bíblicas</p>
     <p><em>"Toda la Escritura es inspirada por Dios y útil para enseñar, para redargüir, para corregir, para instruir en justicia" - 2 Timoteo 3:16</em></p>
 </div>
 """, unsafe_allow_html=True)
